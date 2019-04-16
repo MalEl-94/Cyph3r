@@ -47,7 +47,6 @@ footer{
 }
 
 
-
 nav a {
   float: left;
   display: block;
@@ -62,6 +61,10 @@ nav a {
 nav a:hover {
   background: #ddd;
   color: black;
+}
+
+textarea {
+  resize: none;
 }
 
 #home-message
@@ -81,7 +84,8 @@ nav a:hover {
 
 }
 
-form
+
+#cypher_form
 {
     display: grid;
     grid-template-columns: [labels] auto [textarea] 1fr;
@@ -91,17 +95,42 @@ form
     padding: 1.2em;
 }
 
-form> input,
-form> label  {
+#cypher_form> input,
+#cypher_form> label  {
     grid-column: labels;
     grid-row: auto;
   }
 
-  form>button,
-  form > textarea
+  #cypher_form>button,
+  #cypher_form > textarea
    {
     grid-column: textarea;
     grid-row: auto;
     border: none;
     padding: 1em;
   }
+
+  #reg_form
+  {
+      display: grid;
+      grid-template-columns: [labels] auto [input] 1fr;
+      grid-auto-flow: row;
+      grid-gap: .8em;
+      background: #eee;
+      padding: 1.2em;
+  }
+
+  #reg_form> label,
+  #reg_form> .radio  {
+      grid-column: labels;
+      grid-row: auto;
+    }
+
+    #reg_form>button,
+    #reg_form> input
+     {
+      grid-column: input;
+      grid-row: auto;
+      border: none;
+      padding: 1em;
+    }

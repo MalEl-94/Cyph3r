@@ -16,11 +16,14 @@
     <a href="rot13.html">ROT13</a>
     <a href="morse.html">MORSE CODE</a>
     <a href="vigenere.html">VIGENÈRE</a>
+    <a href="register.html">REGISTER</a>
+    <a href="messenger.html">MESSENGER</a>
   </nav>
   <main>
 <p id="info_text"><b>MORSE CODE</b> is the method of transmitting telegraphic information, using standardised sequences
    of short and long elements to represent letters, numbers and special characters in a message.</p>
-    <form>
+
+    <form id="cypher_form">
         <label class="message">Input :</label>
         <textarea id="input" rows="5" cols="60" onchange="update()" onkeyup="update()" placeholder="Type your message here"></textarea>
         <input type="radio" name="radio_btn" id="encode_btn">Encode</input>

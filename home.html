@@ -16,11 +16,28 @@
     <a href="rot13.html">ROT13</a>
     <a href="morse.html">MORSE CODE</a>
     <a href="vigenere.html">VIGENERE</a>
+    <a href="register.html">REGISTER</a>
+    <a href="messenger.html">MESSENGER</a>
   </nav>
   <main>
     <p id="home-message">Welome to <b>Cyph3r</b>! Want to send a secret message?
      Use one of the cypher tools on the left to
      encrypt a message!</p>
+     <br>
+     <p id="home-message">If you are already a registered member login below. Not a member?
+     Sign up by heading to Registration page.</p>
+
+
+     <form id="reg_form">
+         <label>Username :</label>
+         <input type="text" placeholder="Enter Email" name="email" required>
+
+         <label>Password :</label>
+         <input type="password" placeholder="Enter Password" name="psw"required>
+
+         <button type="button" name="button" onclick="clear()">Login</button>
+     </form>
+
    </main>
   <footer>an amalik production</footer>
 </div>

@@ -1,0 +1,52 @@
+<!DOCTYPE  html >
+<html>
+
+<head>
+    <link  rel="stylesheet" type="text/css" href="style.css">
+    <title>MESSENGER</title>
+</head>
+
+<body>
+
+  <div class="container">
+  <header><h1>Cyph3r</h1></header>
+  <nav>
+    <a href="home.html">HOME</a>
+    <a href="rot13.html">ROT13</a>
+    <a href="morse.html">MORSE CODE</a>
+    <a href="vigenere.html">VIGENÈRE</a>
+    <a href="register.html">REGISTER</a>
+    <a href="messenger.html">MESSENGER</a>
+  </nav>
+  <main>
+
+<p id="info_text"><b>Messenger</b>: type the username of the person you would like to send a message to</p>
+
+    <form id="reg_form">
+
+        <label>To</label>
+        <input type="text" placeholder="Enter recipient username" name="username" required>
+
+        <label>Message</label>
+        <textarea name="name" rows="8" cols="80" resize: none></textarea>
+
+        <select name="cipherSelect" id="cipherSelect">
+          <option value="raw">ROT13</option>
+          <option value="Atbash">MORSE</option>
+          <option value="Homophonic">VIGENERE</option>
+        </select>
+
+        <button type="button" name="button" onclick="send()">Send</button>
+
+    </form>
+
+   </main>
+  <footer>an amalik production</footer>
+</div>
+
+
+
+<script type="text/javascript" src=""></script>
+
+</body>
+</html>
