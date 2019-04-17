@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='style.css')
+    title ROT13
+  body
+    .container
+      header
+        h1 Cyph3r
+        include navigation.pug
+      main
+        p#info_text
+          | The
+          b ROT13
+          |  is a simple but classic cypher
+          |    that replaces a letter with the letter 13 letters after it in the alphabet.
+        form#cypher_form
+          label Input :
+          textarea#input(rows='5', cols='60', onchange='update()', onkeyup='update()', placeholder='Type your message here')
+          input#encode_btn(type='radio', name='radio_btn')
+          | Encode
+          input#decode_btn(type='radio', name='radio_btn')
+          | Decode
+          label Output :
+          textarea#output(rows='5', cols='60', readonly='')
+          button(type='button', name='button', onclick='clear()') Clear
+      footer an amalik production
+    script(type='text/javascript', src='/javascripts/rot13.js')

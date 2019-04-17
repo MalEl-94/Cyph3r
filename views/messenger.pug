@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='style.css')
+    title MESSENGER
+  body
+    .container
+      header
+        h1 Cyph3r
+       include navigation.pug
+      main
+        p#info_text
+          b Messenger
+          | : type the username of the person you would like to send a message to
+        form#reg_form
+          label To
+          input(type='text', placeholder='Enter recipient username', name='username', required='')
+          label Message
+          textarea(name='name', rows='8', cols='80')
+          select#cipherSelect(name='cipherSelect')
+            option(value='raw') ROT13
+            option(value='Atbash') MORSE
+            option(value='Homophonic') VIGENERE
+          button(type='button', name='button', onclick='send()') Send
+      footer an amalik production
+    script(type='text/javascript', src='')

@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='style.css')
+    title VIGENERE Cypher
+  body
+    .container
+      header
+        h1 Cyph3r
+      include navigation.pug
+      main
+        p#info_text
+          | The letters in a
+          b VIGENERE
+          |  cypher are shifted by varying amounts,
+          |    usually done by using a word or phrase as an encryption key.
+        form#cypher_form
+          label Input :
+          textarea#input(rows='5', cols='60', onchange='update()', onkeyup='update()', placeholder='Type your message here')
+          input#encode_btn(type='radio', name='radio_btn')
+          | Encode
+          input#decode_btn(type='radio', name='radio_btn')
+          | Decode
+          label Key :
+          textarea#key(rows='1', cols='30')
+          label Output :
+          textarea#output(rows='5', cols='60', readonly='')
+          button(type='button', name='button', onclick='clear()') Clear
+      footer an amalik production
+    script(type='text/javascript', src='vigenere.js')

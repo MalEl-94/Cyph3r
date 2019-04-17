@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    title MORSE CODE
+  body
+    .container
+      header
+        h1 Cyph3r
+      include navigation.pug
+      main
+        p#info_text
+          b MORSE CODE
+          |  is the method of transmitting telegraphic information, using standardised sequences
+          |    of short and long elements to represent letters, numbers and special characters in a message.
+        form#cypher_form
+          label.message Input :
+          textarea#input(rows='5', cols='60', onchange='update()', onkeyup='update()', placeholder='Type your message here')
+          input#encode_btn(type='radio', name='radio_btn')
+          | Encode
+          input#decode_btn(type='radio', name='radio_btn')
+          | Decode
+          label.out_message Output :
+          textarea#output(rows='5', cols='60', readonly='')
+          button(type='button', name='button', onclick='clear()') Clear
+      footer an amalik production
+    script(type='text/javascript', src='morse.js')
