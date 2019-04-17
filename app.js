@@ -3,8 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 
-var index= require('./routes/index');
+var index = require('./routes/index');
 var register = require('./routes/register');
 var rot13 = require('./routes/rot13')
 var morse = require('./routes/morse');
@@ -12,6 +13,18 @@ var messenger = require('./routes/messenger');
 var vigenere = require('./routes/vigenere');
 
 var app = express();
+
+
+var MongoClient = require('mongodb').MongoClient;
+
+var uri = "mongodb+srv://malik1:malikdb@mycluster-gtej0.mongodb.net/test?retryWrites=true";
+
+MongoClient.connect(uri, function(err, client) {
+
+console.log("connected");
+
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//middleware
 app.use('/', index);
 app.use('/register', register);
 app.use('/rot13', rot13);
