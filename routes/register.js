@@ -33,7 +33,6 @@ router.post('/', function(req, res, next) {
       }
       console.log("File saved successfully!");
       res.redirect('/');
-      alert("User Registered!");
 
   });
 
