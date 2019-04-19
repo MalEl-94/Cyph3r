@@ -1,13 +1,14 @@
 doctype html
 html
+  script(type='text/javascript', src='/javascripts/logic.js')
   head
-    link(rel='stylesheet', type='text/css', href='style.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     title ROT13
-  body
+  body(onload='userViews()')
     .container
       header
         h1 Cyph3r
-        include navigation.pug
+      include navigation.pug
       main
         p#info_text
           | The

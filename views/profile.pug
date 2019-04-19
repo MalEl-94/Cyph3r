@@ -1,0 +1,22 @@
+doctype html
+html
+  script(type='text/javascript', src='/javascripts/logic.js')
+  head
+    link(rel='stylesheet', type='text/css', href='stylesheets/style.css')
+    title PROFILE
+  body(onload='inbox()')
+    .container
+      header
+        h1 Cyph3r
+      include navigation.pug
+      main
+        p#info_text
+          |Welcome to your
+          |
+          b PROFILE PAGE
+          |! use the messenger facility to send
+          |other users messages.
+          label.message Message Inbox :
+          textarea#inbox(rows='5', cols='60', readonly='')
+      footer an amalik production
+    script(type='text/javascript', src='')

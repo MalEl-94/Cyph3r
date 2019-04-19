@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var bcrypt = require('bcryptjs');
+var fs = require('fs');
 
 var index = require('./routes/index');
 var register = require('./routes/register');
@@ -11,20 +13,9 @@ var rot13 = require('./routes/rot13')
 var morse = require('./routes/morse');
 var messenger = require('./routes/messenger');
 var vigenere = require('./routes/vigenere');
+var profile = require('./routes/profile');
 
 var app = express();
-
-
-var MongoClient = require('mongodb').MongoClient;
-
-var uri = "mongodb+srv://malik1:malikdb@mycluster-gtej0.mongodb.net/test?retryWrites=true";
-
-MongoClient.connect(uri, function(err, client) {
-
-console.log("connected");
-
-});
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,18 +27,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 //middleware
-app.use('/', index);
+app.use('/', index.router);
 app.use('/register', register);
 app.use('/rot13', rot13);
 app.use('/morse', morse);
 app.use('/messenger', messenger);
 app.use('/vigenere', vigenere);
+app.use('/profile', profile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

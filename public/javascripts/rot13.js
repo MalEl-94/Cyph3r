@@ -3,7 +3,6 @@ function checks character code of each letter in message and adds 13 to it.Will 
  Lowercase only
 */
 
-
 function encode(message) {
 
     return message.replace(/[a-zA-Z]/g, function (c) {
@@ -33,3 +32,5 @@ function checks if the encode/decode buttons are checked
     document.getElementById("output").value = "";
     document.getElementById("input").value = "";
     }
+
+exports.encode = encode;

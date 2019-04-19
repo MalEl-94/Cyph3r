@@ -84,7 +84,6 @@ textarea {
 
 }
 
-
 #cypher_form
 {
     display: grid;
@@ -110,27 +109,54 @@ textarea {
     padding: 1em;
   }
 
-  #reg_form
-  {
-      display: grid;
-      grid-template-columns: [labels] auto [input] 1fr;
-      grid-auto-flow: row;
-      grid-gap: .8em;
-      background: #eee;
-      padding: 1.2em;
-  }
-
-  #reg_form> label,
-  #reg_form> .radio  {
-      grid-column: labels;
-      grid-row: auto;
+    #basic_form
+    {
+        display: grid;
+        grid-template-columns: [labels] auto [input] 1fr;
+        grid-auto-flow: row;
+        grid-gap: .8em;
+        background: #eee;
+        padding: 1.2em;
     }
 
-    #reg_form>button,
-    #reg_form> input
-     {
-      grid-column: input;
-      grid-row: auto;
-      border: none;
-      padding: 1em;
-    }
+
+    #basic_form> label,
+    #basic_form> .radio  {
+        grid-column: labels;
+        grid-row: auto;
+      }
+
+      #basic_form>button,
+      #basic_form> input
+       {
+        grid-column: input;
+        grid-row: auto;
+        border: none;
+        padding: 1em;
+      }
+
+      #login_form
+      {
+          display: grid;
+          grid-template-columns: [labels] auto [input] 1fr;
+          grid-auto-flow: row;
+          grid-gap: .8em;
+          background: #eee;
+          padding: 1.2em;
+      }
+
+
+      #login_form> label,
+      #login_form> .radio  {
+          grid-column: labels;
+          grid-row: auto;
+        }
+
+        #login_form>button,
+        #login_form> input
+         {
+          grid-column: input;
+          grid-row: auto;
+          border: none;
+          padding: 1em;
+        }

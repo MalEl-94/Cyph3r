@@ -1,10 +1,10 @@
 doctype html
 html
-
+  script(type='text/javascript', src='/javascripts/logic.js')
   head
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     title Home Page
-  body
+    body(onload='userViews()')
     .container
       header
         h1 Cyph3r
@@ -12,7 +12,7 @@ html
       main
         p#home-message
           | Welome to
-          b Cyph3r
+          b  Cyph3r
           | ! Want to send a secret message?
           |      Use one of the cypher tools on the left to
           |      encrypt a message!
@@ -20,10 +20,10 @@ html
         p#home-message
           | If you are already a registered member login below. Not a member?
           | Sign up by heading to Registration page.
-        form#reg_form
+        form#login_form(method='post', action='/')
           label Username :
-          input(type='text', placeholder='Enter Email', name='email', required='')
+          input(type='text', placeholder='Enter Email', name='username', required='')
           label Password :
           input(type='password', placeholder='Enter Password', name='psw', required='')
-          button(type='button', name='button', onclick='clear()') Login
+          input.btn.btn-primary(type='submit', name='submit',value ='Login')
       footer an amalik production

@@ -1,26 +1,27 @@
 doctype html
 html
+  script(type='text/javascript', src='/javascripts/logic.js')
   head
-    link(rel='stylesheet', type='text/css', href='style.css')
-    title MESSENGER
-  body
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    title ROT13
+  body(onload='userViews()')
     .container
       header
         h1 Cyph3r
-       include navigation.pug
+      include navigation.pug
       main
         p#info_text
-          b Messenger
-          | : type the username of the person you would like to send a message to
-        form#reg_form
-          label To
-          input(type='text', placeholder='Enter recipient username', name='username', required='')
-          label Message
-          textarea(name='name', rows='8', cols='80')
-          select#cipherSelect(name='cipherSelect')
-            option(value='raw') ROT13
-            option(value='Atbash') MORSE
-            option(value='Homophonic') VIGENERE
-          button(type='button', name='button', onclick='send()') Send
+          b MESSENGER
+        form#basic_form(method='post', action='/messenger')
+          label To :
+          input(type='text', placeholder='Enter your name', name='rec_username', required='')
+          label Message :
+          textarea(rows='5', cols='60', required='', name='message' )
+          select#cipherSelect(name='chooseCipher')
+           option(value='raw') RAW
+           option(value='morse') MORSE
+           option(value='vigenere') VIGENERE
+           option(value='rot13') ROT13
+          input.btn.btn-primary(type='submit', name='submit',value ='Send')
       footer an amalik production
-    script(type='text/javascript', src='')
+    script(type='text/javascript', src='/javascripts/rot13.js')

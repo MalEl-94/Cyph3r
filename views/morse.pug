@@ -1,9 +1,10 @@
 doctype html
 html
+  script(type='text/javascript', src='/javascripts/logic.js')
   head
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     title MORSE CODE
-  body
+  body(onload='userViews()')
     .container
       header
         h1 Cyph3r
@@ -24,4 +25,4 @@ html
           textarea#output(rows='5', cols='60', readonly='')
           button(type='button', name='button', onclick='clear()') Clear
       footer an amalik production
-    script(type='text/javascript', src='morse.js')
+    script(type='text/javascript', src='/javascripts/morse.js')

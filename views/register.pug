@@ -1,9 +1,10 @@
 doctype html
 html
+  script(type='text/javascript', src='/javascripts/logic.js')
   head
     link(rel='stylesheet', type='text/css', href='stylesheets/style.css')
     title REGISTRATION
-  body
+  body(onload='userViews()')
     .container
       header
         h1 Cyph3r
@@ -13,7 +14,7 @@ html
           b REGISTER
           |  an account so you can send and receive
           |    encrypted messages!
-        form#reg_form(method='post', action='register.html')
+        form#basic_form(method='post', action='/register')
           label Name :
           input(type='text', placeholder='Enter your name', name='name', required='')
           label Username :
@@ -22,6 +23,6 @@ html
           input(type='password', placeholder='Enter a password', name='psw', required='')
           label Confirm Password :
           input(type='password', placeholder='Repeat Password', name='confpsw', required='')
-          button(type='button', name='button', onclick='clear()') Register Me
+          input.btn.btn-primary(type='submit', name='submit',value ='Register')
       footer an amalik production
     script(type='text/javascript', src='')
